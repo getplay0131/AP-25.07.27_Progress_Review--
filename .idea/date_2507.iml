@@ -15,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/date_250718" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/date_250719" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/date_250720" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/date_250721-250727 - project1" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/date_250703/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/date_250703/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/date_250703/build" />
@@ -42,6 +43,42 @@
       <excludeFolder url="file://$MODULE_DIR$/date_250718/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/date_250718/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/date_250718/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250701/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250701/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250701/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250702/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250702/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250702/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250704/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250704/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250704/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250705/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250705/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250705/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250706/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250706/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250706/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250707/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250707/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250707/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250708/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250708/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250708/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250710/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250710/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250710/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250716/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250716/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250716/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250719/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250719/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250719/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250720/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250720/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250720/build" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250721-250727 - project1/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250721-250727 - project1/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/date_250721-250727 - project1/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
