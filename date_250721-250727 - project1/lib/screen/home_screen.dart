@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // 수정 화면은 추가 화면에 로직의 내용을 바꿔서 표시 (완료) >
 // 수정 완료후 홈 스크린으로 돌아가기 (완료) >
 // 이때 상세 내용에도 해당 내용이 전달 되어야 함
+// 25-07-28 할일!
+// TODO : 스크린 전환시 데이터 전달 무너짐 > 수정 필요!
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
