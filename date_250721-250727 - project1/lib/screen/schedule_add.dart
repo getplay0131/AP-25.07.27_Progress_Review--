@@ -22,6 +22,62 @@ class _ScheduleAddState extends State<ScheduleAdd> {
   String description = "";
   String location = "";
   bool isCompleted = false;
+
+  String currentMode = "";
+
+  int _selectedIndex = 0; // 현재 선택된 인덱스
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+
+    var args = ModalRoute.of(context)?.settings.arguments;
+    setState(() {
+      if (args != null && args is Map<String, dynamic>) {
+        // args가 null이 아니고 Map<String, dynamic> 타입인 경우에만 처리
+        title = args['title'] ?? '';
+        date = args['date'] ?? DateTime.now();
+        description = args['description'] ?? '';
+        location = args['location'] ?? '';
+        isCompleted = args['isCompleted'] ?? false;
+        currentMode = args['mode'] ?? 'add'; // 'add' 또는 'edit' 모드
+        _selectedIndex = args['selectedIndex'] ?? 0; // 선택된 인덱스 초기화
+      } else {
+        // 초기값 설정
+        title = '';
+        date = DateTime.now();
+        description = '';
+        location = '';
+        isCompleted = false;
+        currentMode = 'add';
+        _selectedIndex = 0; // 초기 선택된 인덱스
+      }
+    });
+
+    setState(() {
+      if (currentMode == "edit") {
+        // 수정 모드일 때 기존 데이터로 컨트롤러 초기화
+        _titleController.text = title;
+        _descriptionController.text = description;
+        _locationController.text = location;
+      } else {
+        // 추가 모드일 때 컨트롤러 초기화
+        _titleController.clear();
+        _descriptionController.clear();
+        _locationController.clear();
+      }
+    });
+    print("didChangeDependencies called");
+    print("===== loading data =====");
+    print("title: $title");
+    print("date: $date");
+    print("description: $description");
+    print("location: $location");
+    print("isCompleted: $isCompleted");
+    print("currentMode: $currentMode");
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -29,6 +85,7 @@ class _ScheduleAddState extends State<ScheduleAdd> {
     _titleController = TextEditingController();
     _descriptionController = TextEditingController();
     _locationController = TextEditingController();
+    print("initState called");
   }
 
   @override
@@ -81,7 +138,7 @@ class _ScheduleAddState extends State<ScheduleAdd> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "일정 추가",
+          currentMode == "edit" ? "일정 수정하기" : "일정 추가하기",
           style: TextStyle(color: Colors.black, fontSize: 24),
         ),
         centerTitle: true,
@@ -108,7 +165,7 @@ class _ScheduleAddState extends State<ScheduleAdd> {
             descriptionController: _descriptionController,
             locationController: _locationController,
           ),
-          _buildTimeSection(),
+          _buildTimeSection(currentMode),
           Checkbox(
             value: isCompleted,
             onChanged: (value) {
@@ -120,8 +177,14 @@ class _ScheduleAddState extends State<ScheduleAdd> {
           ),
           ElevatedButton(
             onPressed: _collectAndValidateData,
-            child: Text("일정 추가 하기!"),
+            child: Text(currentMode == "edit" ? "일정 수정하기" : "일정 추가하기"),
           ),
+          SizedBox(height: 20),
+          Text(
+            "현재 모드: $currentMode",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 20),
         ],
       ),
     );
@@ -218,6 +281,17 @@ class _ScheduleAddState extends State<ScheduleAdd> {
           'location': location,
           'isCompleted': isCompleted,
         });
+        Navigator.of(context).pushNamed(
+          "/home_screen",
+          arguments: {
+            'title': title,
+            'date': date,
+            'description': description,
+            'location': location,
+            'isCompleted': isCompleted,
+            "mode": currentMode, // 현재 모드 전달
+          },
+        );
       }
     } else {
       // 데이터가 유효하지 않으면 에러 메시지 표시
@@ -233,7 +307,7 @@ class _ScheduleAddState extends State<ScheduleAdd> {
     _locationController.clear();
   }
 
-  Widget _buildTimeSection() {
+  Widget _buildTimeSection(String currentMode) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -245,7 +319,7 @@ class _ScheduleAddState extends State<ScheduleAdd> {
         SizedBox(width: 12),
         ElevatedButton(
           onPressed: () => _showDatePicker(context),
-          child: Text("날짜/시간 선택"),
+          child: Text(currentMode == "edit" ? "날짜/시간 수정" : "날짜/시간 선택"),
         ),
       ],
     );

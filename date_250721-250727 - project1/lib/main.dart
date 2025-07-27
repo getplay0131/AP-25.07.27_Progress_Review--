@@ -186,6 +186,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+// 25-07-26 할 일!
+// TODO : 할일 수정 기능 구현하기
+// 홈 스크린에 수정 또는 보기 기능 > 보기 기능일때는 기존 로직 유지 > 수정 기능일때는 수정 화면으로 이동 > 수정 화면은 추가 화면에 로직의 내용을 바꿔서 표시 > 수정 완료후 홈 스크린으로 돌아가기 > 이때 상세 내용에도 해당 내용이 전달 되어야 함
+// TODO : 할일 삭제 기능 구현하기
+// TODO : 할일 완료 토글 기능 구현하기
+
 void main() {
   runApp(
     MaterialApp(
